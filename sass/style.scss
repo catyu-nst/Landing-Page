@@ -1,0 +1,46 @@
+
+$color-black : #000;
+$color-blue: #3fbced;
+$color-white: #fff;
+
+html {
+	height: 100%;
+	position: relative;
+} 
+ 
+body, * {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	background-color: $color-black !important;
+	color: $color-white;
+}
+
+.font-blue {
+	color: $color-blue;
+}
+
+.page-header {
+	border-bottom: none !important;
+	h1 {
+		font-size: 60px;
+		a {
+			text-decoration: none;
+			color: $color-white;
+		}		
+	}
+}
+
+.page-subheader {
+	.row {
+		div {
+			border: none !important;
+		}
+	}
+}
+
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+
