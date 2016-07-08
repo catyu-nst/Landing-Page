@@ -1,23 +1,84 @@
 
-$color-black : #000;
+$color-black-lighter : #1e1e1e;
+$color-black-darker: #131313;
 $color-blue: #3fbced;
 $color-white: #fff;
+$color-gray: #c2c2c2;
+
+* {
+	color: $color-white;
+}
 
 html {
 	height: 100%;
 	position: relative;
 } 
  
-body, * {
+body {
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
-	background-color: $color-black !important;
-	color: $color-white;
+	background-color: $color-black-lighter !important;
+	
 }
 
-.font-blue {
-	color: $color-blue;
+.font-blue { color: $color-blue;}
+.font-gray { color: $color-gray;}
+.font-white { color: $color-white;}
+
+.nav {
+	margin-top: 35px;
+	float: right;
+	font-size: 16px;
+	ul {
+		li {
+			list-style-type: none;
+			float: left;
+			padding: 15px;		
+			a {
+				color: $color-white;
+			}
+			a:hover {
+				color: $color-blue;
+				text-decoration: none;
+			}
+
+		}
+		li.dropdown {
+			div.dropdown-content {
+				a {
+					display: none;
+					text-decoration: none;
+					
+				}
+			}
+			.dropbtn {
+				.glyphicon {
+					font-size: 8px;
+				}
+			}
+		}
+		li.dropdown:hover {
+			div.dropdown-content {
+				position: absolute;
+				background: $color-black-darker;
+				
+				a {
+					display: block;
+					color: $color-white;
+					padding: 5px 10px;
+				}
+				a:hover {					
+					color: $color-blue;
+				}
+			}	
+			.dropbtn {
+				.glyphicon {
+					color: $color-blue;
+				}
+			}
+		}
+	}
 }
 
 .page-header {
@@ -35,12 +96,59 @@ body, * {
 	.row {
 		div {
 			border: none !important;
+			font-weight: lighter;
+			font-style: italic;
+			a {
+				color: #00c0ff;
+			}
+
 		}
 	}
+}
+
+[class*="col-"] {
+	background-color: transparent !important;
+	border-color: transparent !important;
 }
 
 #grid[data-columns]::before {
 	content: '3 .column.size-1of3';
 }
 
+.clear { clear: both;}
+.column { float: left;}
+.size-1of3 { width: 33.33%;}
+.item { margin: 20px;}
+// .text-right { text-align: right;}
 
+.item[data-n="1"] { padding-bottom: 50%; }
+.item[data-n="2"] { padding-bottom: 30%; }
+.item[data-n="3"] { padding-bottom: 70%; }
+.item[data-n="4"] { padding-bottom: 40%; }
+.item[data-n="5"] { padding-bottom: 70%; }
+.item[data-n="6"] { padding-bottom: 80%; }
+.item[data-n="7"] { padding-bottom: 90%; }
+.item[data-n="8"] { padding-bottom: 100%; }
+
+.item[data-n="1"] {	background: url('../img/koala.jpg') no-repeat center;}
+.item[data-n="2"] {	background: url('../img/lighthouse.jpg') no-repeat center;}
+.item[data-n="3"] {	background: url('../img/jellyfish.jpg') no-repeat center;}
+.item[data-n="4"] {	background: url('../img/penguins.jpg') no-repeat center;}
+.item[data-n="5"] {	background: url('../img/desert.jpg') no-repeat center;}
+.item[data-n="6"] {	background: url('../img/tulips.jpg') no-repeat center;}
+.item[data-n="7"] {	background: url('../img/chrysanthemum.jpg') no-repeat center;}
+.item[data-n="8"] {	background: url('../img/hydrangeas.jpg') no-repeat center;}
+
+footer {
+	width: 100%;
+	min-height: 45px;
+	background-color: $color-black-darker;
+	font-size: 12px;
+	a {
+		color: $color-gray;
+	}
+	a:hover {
+		color: $color-white;
+		text-decoration: none;
+	}	 
+}
